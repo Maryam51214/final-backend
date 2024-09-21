@@ -33,13 +33,16 @@ export const createFood = async (req, res) => {
 
 
 export const getFood = async (req, res) => {
+    console.log('Received request for all food items'); // Add this line
     try {
         const foods = await Food.find(); // Fetch all food items from the database
         return res.status(200).json(foods);
     } catch (error) {
+        console.error('Error fetching food items:', error); // Log the error
         return res.status(500).json({ message: 'Server error', error });
     }
 };
+
 
 // Get food item by ID
 export const foodDetail = async (req, res) => {

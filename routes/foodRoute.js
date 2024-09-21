@@ -1,6 +1,7 @@
 import express from "express";
 import { createFood, deleteFood, foodDetail, getFood, updateFood } from "../controllers/foodController.js";
 
+
 const foodRouter = express.Router();
 foodRouter.post("/create-food", createFood)
 foodRouter.get("/get-food", getFood)
